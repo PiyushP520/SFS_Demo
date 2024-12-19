@@ -18,7 +18,7 @@ export class ProductionstatevisualComponent implements OnInit, OnChanges {
 
   constructor(private el: ElementRef) {}
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(changes: SimpleChanges) {
     if (changes['orderData'] && this.orderData) {
       this.data.push(parseInt(this.orderData.productionState));
 
@@ -31,13 +31,13 @@ export class ProductionstatevisualComponent implements OnInit, OnChanges {
     }
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.createSvg();
     this.createTooltip();
     this.addAxes();
   }
 
-  private createSvg(): void {
+  private createSvg() {
     this.svg = d3.select(this.el.nativeElement).select('svg')
       .attr('width', 700)
       .attr('height', 400)
@@ -45,7 +45,7 @@ export class ProductionstatevisualComponent implements OnInit, OnChanges {
       .attr('transform', `translate(${this.margin.left}, ${this.margin.top})`);
   }
 
-  private createTooltip(): void {
+  private createTooltip() {
     this.tooltip = d3.select(this.el.nativeElement).append('div')
       .attr('class', 'tooltip')
       .style('position', 'absolute')
@@ -57,13 +57,13 @@ export class ProductionstatevisualComponent implements OnInit, OnChanges {
       .style('font-size', '12px');
   }
 
-  private updateChart(): void {
+  private updateChart() {
     this.svg.selectAll('*').remove(); // Clear previous elements
     this.addAxes();
     this.drawBars();
   }
 
-  private drawBars(): void {
+  private drawBars() {
     const latestData = this.data.slice(-10);
 
     const xScale = d3.scaleBand()
@@ -96,7 +96,7 @@ export class ProductionstatevisualComponent implements OnInit, OnChanges {
       });
   }
 
-  private addAxes(): void {
+  private addAxes() {
     const xScale = d3.scaleBand()
       .domain(this.data.map((_, i) => i.toString()))
       .range([0, this.width])

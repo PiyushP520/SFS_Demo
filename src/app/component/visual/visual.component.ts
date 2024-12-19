@@ -71,7 +71,7 @@ export class VisualComponent {
 
   }
 
-  private createLine(): void {
+  private createLine() {
     this.line = d3.line<any>()
       .x(d => this.x(d.timestamp))
       .y(d => this.y(d.partsPerMinute));
@@ -91,7 +91,7 @@ export class VisualComponent {
     this.updateChart();
   }
 
-  private updateChart(): void {
+  private updateChart() {
     this.x.domain([Date.now() - 60000, Date.now()]);
 
     this.svg.select('.line')
