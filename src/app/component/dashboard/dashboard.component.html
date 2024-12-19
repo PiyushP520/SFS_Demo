@@ -1,0 +1,5 @@
+<div class="card-container">
+    <div *ngFor="let device of devices" class="card" [routerLink]="['/device',device]">
+        <p>Device: {{device}}</p>
+    </div>
+</div>

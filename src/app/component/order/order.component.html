@@ -1,0 +1,17 @@
+<div class="device-container">
+    <div class="parameter-container">
+        <div class="parameter"><span>Order Number</span></div>
+        <div class="value">{{ orderData?.orderNumber ? orderData?.orderNumber : 'Loading...' }}
+        </div>
+    </div>
+    <div class="parameter-container">
+        <div class="parameter">Production Target</div>
+        <div class="value">{{orderData?.productionTarget ? orderData?.productionTarget: 'Loading...'}}</div>
+    </div>
+    <div class="parameter-container">
+        <div class="parameter">Production State</div>
+        <div class="value">{{orderData?.productionState ? orderData?.productionState : 'Loading...'}}</div>
+    </div>
+
+    <app-productionstatevisual [orderData]="orderData"></app-productionstatevisual>
+</div>

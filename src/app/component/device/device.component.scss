@@ -1,0 +1,68 @@
+.row {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.left-container{
+    height: 100%;
+    width: 50%;
+}
+
+.right-container{
+    height: 100%;
+    width: 50%;
+}
+
+.right-child{
+    text-align: center;
+}
+
+.card {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+.card.upper {
+    height: 25%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.card.lower {
+    height: 75%;
+    width: 100%;
+}
+
+.parameter-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    div {
+        width: 50%;
+        font-size: large;
+    }
+
+    .parameter {
+        display: flex;
+        justify-content: end;
+        margin-right: 20px;
+    }
+}
+
+.running {
+    color: green;
+}
+
+.stopped {
+    color: red;
+}
+
+.maintenance {
+    color: orange;
+}

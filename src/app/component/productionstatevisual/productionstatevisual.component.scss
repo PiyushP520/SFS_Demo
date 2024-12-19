@@ -1,0 +1,9 @@
+::ng-deep {
+    .bar {
+        fill: steelblue;
+    }
+
+    .bar:hover {
+        fill: orange;
+    }
+}

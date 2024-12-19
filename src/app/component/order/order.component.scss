@@ -1,0 +1,21 @@
+.parameter-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    div {
+        width: 50%;
+        font-size: larger;
+    }
+
+    .parameter {
+        display: flex;
+        justify-content: end;
+        margin-right: 20px;
+    }
+}
+
+.device-container{
+    width: 100%;
+}

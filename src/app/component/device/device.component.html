@@ -1,0 +1,46 @@
+<div class="device-container">
+    <div class="row">
+        <div class="left-container">
+            <div class="card upper">
+                <h3>Device Details</h3>
+                <div class="parameter-container">
+                    <div class="parameter"><span>Device ID</span></div>
+                    <div class="value">{{ deviceData?.deviceId ? deviceData.deviceId : 'Loading...' }}
+                    </div>
+                </div>
+                <div class="parameter-container">
+                    <div class="parameter">Status</div>
+                    <div class="value" [ngClass]="getCssClass(deviceData?.status)">{{deviceData?.status ?
+                        (deviceData.status|uppercase): 'Loading...'}}</div>
+                </div>
+                <div class="parameter-container">
+                    <div class="parameter">partsPerMinute</div>
+                    <div class="value">{{deviceData?.partsPerMinute ? (deviceData.partsPerMinute | number:'1.2-2') :
+                        'Loading...'}}</div>
+                </div>
+                <div class="parameter-container">
+                    <div class="parameter">Date</div>
+                    <div class="value">{{deviceData?.timestamp ? (deviceData.timestamp | date) : 'Loading...'}}</div>
+                </div>
+                <div class="parameter-container">
+                    <div class="parameter">Order Id</div>
+                    <div class="value">{{deviceData?.order ? (deviceData.order) : 'Loading...'}}</div>
+                </div>
+            </div>
+            <div class="card lower">
+                <app-visual [eventData]="deviceData"></app-visual>
+            </div>
+        </div>
+        <div class="right-container">
+            <div class="right-child">
+                <h3>Order Details</h3>
+                <div>
+                    <div class="value"><button [routerLink]="['./order', deviceData?.order]"
+                            [disabled]="!deviceData?.order">Get
+                            Details {{deviceData?.order}}</button></div>
+                </div>
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
